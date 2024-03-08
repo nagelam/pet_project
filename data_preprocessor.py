@@ -3,6 +3,8 @@ class DataPreprocessor:
     def __init__(self, user_profile):
         self.profile = user_profile
         self.df = pd.read_csv('sample.csv', nrows=1)
+        self.df.drop(columns=['Unnamed: 0','default_flg'], inplace=True)
+
 
     def process(self):
         for col in self.df.columns:
